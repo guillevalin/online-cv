@@ -1,0 +1,27 @@
+name = "guillermo-valin-website"
+compatibility_date = "2024-06-27"
+
+[env.production]
+routes = [
+  { pattern = "guillermovalin.com", custom_domain = true },
+  { pattern = "www.guillermovalin.com", custom_domain = true }
+]
+
+[[rules]]
+type = "Transform"
+match = "*.html"
+compress = true
+
+[[rules]]
+type = "Transform"
+match = "*.css"
+compress = true
+
+[[rules]]
+type = "Transform"
+match = "*.js"
+compress = true
+
+[build]
+command = ""
+publish = "."

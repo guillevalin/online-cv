@@ -1,0 +1,22 @@
+---
+import { t, type Lang } from '../i18n/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const h = t[lang].hero;
+---
+
+<header class="hero container">
+  <div class="hero-eyebrow">{h.eyebrow}</div>
+  <h1 class="hero-name">{h.name}</h1>
+  <p class="hero-lede">{h.lede}</p>
+  <div class="hero-ctas">
+    <a class="btn btn-primary" href="mailto:contact@guillermovalin.com">{h.contact}</a>
+    <a class="btn" href="/resume_en.pdf" target="_blank" rel="noopener">{h.cvEn}</a>
+    <a class="btn" href="/resume_es.pdf" target="_blank" rel="noopener">{h.cvEs}</a>
+    <a class="btn" href="https://www.linkedin.com/in/guillermovalin/" target="_blank" rel="noopener">{h.linkedin}</a>
+  </div>
+</header>

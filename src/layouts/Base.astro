@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+import { t, type Lang } from '../i18n/content';
+
+interface Props {
+  lang: Lang;
+  pathname: string;
+}
+
+const { lang, pathname } = Astro.props;
+const copy = t[lang];
+const site = 'https://guillermovalin.com';
+const canonical = `${site}${pathname}`;
+const ogImage = `${site}/og-image.png`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Guillermo Valin',
+  jobTitle: lang === 'en' ? 'Software Engineer & Technology Leader' : 'Ingeniero de Software y Líder Tecnológico',
+  url: site,
+  email: 'mailto:contact@guillermovalin.com',
+  sameAs: [
+    'https://www.linkedin.com/in/guillermovalin/',
+    'https://github.com/guillevalin',
+  ],
+  worksFor: {
+    '@type': 'Organization',
+    name: 'dcSpark',
+  },
+  alumniOf: [
+    { '@type': 'CollegeOrUniversity', name: 'Universidad Técnica Federico Santa María' },
+    { '@type': 'CollegeOrUniversity', name: 'Universidad Andrés Bello' },
+  ],
+  knowsLanguage: ['Spanish', 'English'],
+};
+---
+
+<!doctype html>
+<html lang={copy.htmlLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{copy.meta.title}</title>
+    <meta name="description" content={copy.meta.description} />
+    <link rel="canonical" href={canonical} />
+
+    <link rel="alternate" hreflang="en" href={`${site}/`} />
+    <link rel="alternate" hreflang="es" href={`${site}/es/`} />
+    <link rel="alternate" hreflang="x-default" href={`${site}/`} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_ES'} />
+    <meta property="og:site_name" content="Guillermo Valin" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={copy.meta.title} />
+    <meta property="og:description" content={copy.meta.description} />
+    <meta property="og:image" content={ogImage} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={copy.meta.title} />
+    <meta name="twitter:description" content={copy.meta.description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#0b0b0f" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

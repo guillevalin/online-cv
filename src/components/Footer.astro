@@ -1,0 +1,19 @@
+---
+import { t, type Lang } from '../i18n/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const f = t[lang].footer;
+const year = new Date().getFullYear();
+---
+
+<footer class="footer container">
+  <p>
+    {f.tagline}{' '}
+    <a href={f.companyHref} target="_blank" rel="noopener">{f.company}</a>.
+  </p>
+  <p>© {year} {f.copy}</p>
+</footer>

@@ -1,51 +1,44 @@
-# Guillermo Valin - Personal Website
+# Guillermo Valin — guillermovalin.com
 
-A modern, responsive personal website built for Cloudflare Pages deployment.
+Personal website for Guillermo Valin. Static, bilingual (EN/ES), deployed to Cloudflare Pages.
 
-## Features
+## Stack
 
-- 🌐 Bilingual support (English/Spanish)
-- 📱 Fully responsive design
-- ⚡ Fast loading with modern web technologies
-- 🎨 Clean, professional design
-- 🔧 Built for Cloudflare Pages
+- [Astro](https://astro.build) — static output, zero client JS by default
+- Inter + Fraunces (via Google Fonts)
+- Plain CSS with design tokens (`src/styles/global.css`)
 
-## Tech Stack
+## Develop
 
-- HTML5
-- CSS3 (with modern features)
-- Vanilla JavaScript
-- Cloudflare Pages
-- Inter font family
+```bash
+npm install
+npm run dev       # http://localhost:4321
+```
 
-## Development
+## Build
 
-1. Clone or download the project
-2. Open `index.html` in your browser for local development
-3. Modify content in `index.html` for your information
+```bash
+npm run build     # → ./dist
+npm run preview
+```
 
-## Deployment
+## Deploy (Cloudflare Pages)
 
-This project is configured for Cloudflare Pages:
+- Build command: `npm run build`
+- Output dir: `dist`
+- Custom domains configured in `wrangler.toml`
 
-1. Connect your GitHub repository to Cloudflare Pages
-2. Set build command to empty (`""`)
-3. Set publish directory to root (`"."`)
-4. Deploy!
+## Structure
 
-## Language Switching
+```
+src/
+├── layouts/Base.astro          # html/head, meta, OG, JSON-LD
+├── components/                 # Nav, Hero, Now, Experience, Skills, Education, Footer
+├── i18n/content.ts             # EN + ES copy
+├── pages/index.astro           # EN (/)
+└── pages/es/index.astro        # ES (/es/)
+```
 
-- Click the language flags in the header
-- Use keyboard shortcut: `Alt + L`
-- Language preference is saved locally
+## i18n
 
-## Customization
-
-- Update personal information in `index.html`
-- Modify styling in `styles.css`
-- Adjust functionality in `script.js`
-- Configure domain settings in `wrangler.toml`
-
-## License
-
-Personal website - All rights reserved.
+Two statically generated routes: `/` (EN) and `/es/` (ES). Toggle in the nav is a plain link. Add languages by extending `src/i18n/content.ts` and adding a page under `src/pages/`.

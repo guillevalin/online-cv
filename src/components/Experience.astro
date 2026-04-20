@@ -1,0 +1,71 @@
+---
+import { t, type Lang } from '../i18n/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const e = t[lang].experience;
+---
+
+<section id="experience" class="container">
+  <span class="section-label">{lang === 'en' ? '02 / Experience' : '02 / Experiencia'}</span>
+  <h2 class="section-title">{e.title}</h2>
+
+  {e.items.map((item) => (
+    <article class="exp-item">
+      <div class="exp-head">
+        <h3 class="exp-role">{item.role}</h3>
+        <span class="exp-duration">{item.duration}</span>
+      </div>
+      <div class="exp-company">{item.company}</div>
+      <ul class="exp-bullets">
+        {item.bullets.map((b) => <li>{b}</li>)}
+      </ul>
+    </article>
+  ))}
+
+  <div id="exp-earlier" class="exp-earlier" hidden>
+    {e.earlierItems.map((item) => (
+      <article class="exp-item">
+        <div class="exp-head">
+          <h3 class="exp-role">{item.role}</h3>
+          <span class="exp-duration">{item.duration}</span>
+        </div>
+        <div class="exp-company">{item.company}</div>
+        <ul class="exp-bullets">
+          {item.bullets.map((b) => <li>{b}</li>)}
+        </ul>
+      </article>
+    ))}
+  </div>
+
+  <div class="exp-more">
+    <button
+      id="exp-toggle"
+      class="exp-more-btn"
+      type="button"
+      aria-expanded="false"
+      aria-controls="exp-earlier"
+      data-more={e.viewMore}
+      data-less={e.viewLess}
+    >
+      {e.viewMore} →
+    </button>
+  </div>
+</section>
+
+<script>
+  const btn = document.getElementById('exp-toggle');
+  const panel = document.getElementById('exp-earlier');
+  btn?.addEventListener('click', () => {
+    if (!panel || !btn) return;
+    const open = panel.hidden === false;
+    panel.hidden = open;
+    btn.setAttribute('aria-expanded', String(!open));
+    const more = btn.dataset.more ?? 'More';
+    const less = btn.dataset.less ?? 'Less';
+    btn.textContent = (open ? more : less) + ' →';
+  });
+</script>

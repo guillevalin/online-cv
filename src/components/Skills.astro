@@ -1,0 +1,23 @@
+---
+import { t, type Lang } from '../i18n/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const s = t[lang].skills;
+---
+
+<section id="stack" class="container">
+  <span class="section-label">{lang === 'en' ? '03 / Stack' : '03 / Stack'}</span>
+  <h2 class="section-title">{s.title}</h2>
+  {s.groups.map((g) => (
+    <div class="skill-group">
+      <span class="skill-group-label">{g.label}</span>
+      <div class="skill-tags">
+        {g.tags.map((tag) => <span class="skill-tag">{tag}</span>)}
+      </div>
+    </div>
+  ))}
+</section>

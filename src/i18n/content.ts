@@ -34,6 +34,36 @@ export const t = {
         'Running cloud infrastructure on GCP + Cloudflare and CI/CD on GitHub Actions.',
       ],
     },
+    projects: {
+      title: 'Projects',
+      subtitle: 'Products I’m leading through Codigo Once.',
+      items: [
+        {
+          name: 'AgentLayer',
+          tag: 'Enterprise AI',
+          year: '2026',
+          copy:
+            'A marketplace of certified AI agents for enterprise teams — competitive intelligence, financial audit, lead generation, ticketing, logistics tracking. Integrated with ERP, CRM, and data warehouses.',
+          url: 'https://agentlayer.cl',
+        },
+        {
+          name: 'Midnight City',
+          tag: 'AI simulation',
+          year: '2026',
+          copy:
+            'A 2D AI simulation platform where users explore stories, characters, and locations brought to life by AI.',
+          url: 'https://midnight.city',
+        },
+        {
+          name: 'Threshold',
+          tag: 'Personal product',
+          year: '2026',
+          copy:
+            'An AI running coach that uses Strava training and Oura recovery data as context for adaptive, day-to-day guidance — no static plans.',
+          url: 'https://threshold.codigoonce.com',
+        },
+      ],
+    },
     experience: {
       title: 'Selected experience',
       viewMore: 'Show earlier roles',
@@ -191,6 +221,36 @@ export const t = {
         'Desarrollando la <strong>Shinkai App Store</strong> para que los usuarios publiquen sus propias herramientas y agentes de IA.',
         'Creé <strong>MCP Dockmaster</strong>, una herramienta que permite usar servidores MCP con Claude y Cursor.',
         'Gestiono la infraestructura cloud en GCP + Cloudflare y los pipelines CI/CD en GitHub Actions.',
+      ],
+    },
+    projects: {
+      title: 'Proyectos',
+      subtitle: 'Productos que lidero a través de Codigo Once.',
+      items: [
+        {
+          name: 'AgentLayer',
+          tag: 'IA empresarial',
+          year: '2026',
+          copy:
+            'Un marketplace de agentes de IA certificados para equipos empresariales — inteligencia competitiva, auditoría financiera, lead generation, ticketing, tracking de despachos. Integrado con ERP, CRM y data warehouses.',
+          url: 'https://agentlayer.cl',
+        },
+        {
+          name: 'Midnight City',
+          tag: 'Simulación IA',
+          year: '2026',
+          copy:
+            'Una plataforma de simulación 2D donde los usuarios exploran historias, personajes y lugares cobrados vida por IA.',
+          url: 'https://midnight.city',
+        },
+        {
+          name: 'Threshold',
+          tag: 'Producto personal',
+          year: '2026',
+          copy:
+            'Un coach de running con IA que usa entrenamientos de Strava y datos de recuperación de Oura como contexto para entregar guía adaptativa, día a día — sin planes estáticos.',
+          url: 'https://threshold.codigoonce.com',
+        },
       ],
     },
     experience: {

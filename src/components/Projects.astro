@@ -1,0 +1,31 @@
+---
+import { t, type Lang } from '../i18n/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const p = t[lang].projects;
+---
+
+<section id="projects" class="container">
+  <span class="section-label">{lang === 'en' ? '02 / Projects' : '02 / Proyectos'}</span>
+  <h2 class="section-title">{p.title}</h2>
+  <p class="section-subtitle">{p.subtitle}</p>
+
+  <div class="proj-list">
+    {p.items.map((item) => (
+      <a class="proj-item" href={item.url} target="_blank" rel="noopener">
+        <div class="proj-head">
+          <h3 class="proj-title">{item.name}</h3>
+          <div class="proj-meta">
+            <span class="proj-tag">{item.tag}</span>
+            <span>{item.year}</span>
+          </div>
+        </div>
+        <p class="proj-copy">{item.copy}</p>
+      </a>
+    ))}
+  </div>
+</section>

@@ -1,14 +1,15 @@
 :root {
-  --bg: #0b0b0f;
-  --bg-elev: #14141b;
-  --bg-elev-2: #1c1c26;
-  --border: #26262f;
-  --fg: #f5f1e8;
-  --fg-muted: #a8a29e;
-  --fg-dim: #78716c;
-  --accent: #f59e0b;
-  --accent-soft: rgba(245, 158, 11, 0.12);
-  --accent-hover: #fbbf24;
+  --bg: #faf7f0;
+  --bg-elev: #ffffff;
+  --bg-elev-2: #f3ede0;
+  --border: #e8e0ce;
+  --border-strong: #d9cfb8;
+  --fg: #1f1a14;
+  --fg-muted: #5e564b;
+  --fg-dim: #8a8074;
+  --accent: #c2410c;
+  --accent-soft: rgba(194, 65, 12, 0.08);
+  --accent-hover: #9a3412;
   --radius: 14px;
   --radius-sm: 8px;
   --max-w: 780px;
@@ -37,7 +38,7 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(1200px 600px at 50% -200px, rgba(245, 158, 11, 0.08), transparent 60%),
+    radial-gradient(900px 500px at 50% -120px, rgba(194, 65, 12, 0.08), transparent 65%),
     var(--bg);
 }
 
@@ -48,7 +49,7 @@ a {
 
 ::selection {
   background: var(--accent);
-  color: var(--bg);
+  color: #fff;
 }
 
 img,
@@ -99,6 +100,7 @@ svg {
   border: 1px solid var(--border);
   border-radius: 999px;
   font-size: 0.8rem;
+  background: var(--bg-elev);
   transition: all 0.2s;
 }
 
@@ -118,7 +120,7 @@ svg {
   gap: 0.5rem;
   color: var(--accent);
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.02em;
   margin-bottom: 1.5rem;
 }
@@ -129,7 +131,6 @@ svg {
   height: 6px;
   border-radius: 999px;
   background: var(--accent);
-  box-shadow: 0 0 12px var(--accent);
 }
 
 .hero-name {
@@ -140,6 +141,7 @@ svg {
   letter-spacing: -0.03em;
   margin: 0 0 1.5rem;
   font-variation-settings: 'SOFT' 50, 'WONK' 0;
+  color: var(--fg);
 }
 
 .hero-lede {
@@ -165,27 +167,28 @@ svg {
   font-size: 0.95rem;
   font-weight: 500;
   border: 1px solid var(--border);
-  background: transparent;
+  background: var(--bg-elev);
   color: var(--fg);
   transition: all 0.2s;
   cursor: pointer;
 }
 
 .btn:hover {
-  border-color: var(--fg-dim);
+  border-color: var(--border-strong);
   transform: translateY(-1px);
 }
 
 .btn-primary {
-  background: var(--accent);
+  background: var(--fg);
   color: var(--bg);
-  border-color: var(--accent);
+  border-color: var(--fg);
   font-weight: 600;
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
-  border-color: var(--accent-hover);
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
 }
 
 /* ---------- Section ---------- */
@@ -209,6 +212,7 @@ section {
   font-weight: 500;
   letter-spacing: -0.02em;
   margin: 0 0 2rem;
+  color: var(--fg);
 }
 
 .section-subtitle {
@@ -244,6 +248,85 @@ section {
 .now-list strong {
   color: var(--fg);
   font-weight: 600;
+}
+
+/* ---------- Projects ---------- */
+.proj-list {
+  display: grid;
+  gap: 0;
+}
+
+.proj-item {
+  display: block;
+  padding: 1.5rem 0;
+  border-top: 1px dashed var(--border);
+  transition: padding 0.2s;
+  position: relative;
+}
+
+.proj-item:first-child {
+  border-top: none;
+  padding-top: 0.25rem;
+}
+
+.proj-item:hover {
+  padding-left: 0.5rem;
+}
+
+.proj-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.proj-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--fg);
+  margin: 0;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.proj-title::after {
+  content: '↗';
+  color: var(--accent);
+  font-size: 0.85em;
+  font-family: var(--font-sans);
+  transition: transform 0.2s;
+  display: inline-block;
+}
+
+.proj-item:hover .proj-title::after {
+  transform: translate(2px, -2px);
+}
+
+.proj-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--fg-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+.proj-tag {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.proj-copy {
+  color: var(--fg-muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 38em;
 }
 
 /* ---------- Experience ---------- */
@@ -372,7 +455,7 @@ section {
 
 .skill-tag:hover {
   border-color: var(--accent);
-  color: var(--fg);
+  color: var(--accent);
 }
 
 /* ---------- Education ---------- */
@@ -390,6 +473,7 @@ section {
   font-size: 1rem;
   font-weight: 600;
   margin: 0 0 0.25rem;
+  color: var(--fg);
 }
 
 .edu-institution {
@@ -431,6 +515,7 @@ section {
   border-radius: 999px;
   font-size: 0.85rem;
   color: var(--fg-muted);
+  background: var(--bg-elev);
 }
 
 /* ---------- Footer ---------- */
@@ -472,6 +557,11 @@ section {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.15rem;
+  }
+  .proj-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
   }
   .footer {
     flex-direction: column;

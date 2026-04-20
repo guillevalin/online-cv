@@ -26,18 +26,17 @@ export const t = {
     },
     now: {
       title: 'Now',
-      subtitle: 'Senior Software Engineer at dcSpark — Jan 2025 → present',
+      subtitle:
+        'Engineering partner to dcSpark, AgentLayer, and Midnight City — all through Codigo Once — and building Threshold as a personal product.',
       items: [
-        'Shipping <strong>Shinkai App</strong>, a decentralized AI agent creator: libp2p network between Shinkai nodes, payments over Coinbase’s x402 protocol, and compatibility layers for Ollama, Anthropic, OpenAI, Grok, and Gemini.',
-        'Building the <strong>Shinkai App Store</strong> so users can publish their own AI tools and agents.',
-        'Created <strong>MCP Dockmaster</strong> — a tool that lets anyone use MCP servers with Claude and Cursor.',
-        'Running cloud infrastructure on GCP + Cloudflare and CI/CD on GitHub Actions.',
-      ],
-    },
-    projects: {
-      title: 'Projects',
-      subtitle: 'Products I’m leading through Codigo Once.',
-      items: [
+        {
+          name: 'dcSpark',
+          tag: 'Decentralized AI',
+          year: '2025',
+          copy:
+            'Shipping Shinkai — a decentralized AI agent creator with a libp2p network between nodes, Coinbase x402 payments, and provider compatibility layers for Ollama, Anthropic, OpenAI, Grok, and Gemini. Also built the Shinkai App Store and MCP Dockmaster. Running cloud infra on GCP + Cloudflare and CI/CD on GitHub Actions.',
+          url: 'https://shinkai.com',
+        },
         {
           name: 'AgentLayer',
           tag: 'Enterprise AI',
@@ -71,7 +70,7 @@ export const t = {
       items: [
         {
           role: 'Senior Software Engineer',
-          company: 'dcSpark',
+          company: 'dcSpark · via Codigo Once',
           duration: 'Jan 2025 – Present',
           bullets: [
             'Core contributor to the Shinkai Node orchestrating AI agents and managing models.',
@@ -218,18 +217,17 @@ export const t = {
     },
     now: {
       title: 'Ahora',
-      subtitle: 'Senior Software Engineer en dcSpark — ene 2025 → presente',
+      subtitle:
+        'Partner de ingeniería para dcSpark, AgentLayer y Midnight City — todo a través de Codigo Once — y construyendo Threshold como producto personal.',
       items: [
-        'Construyendo <strong>Shinkai App</strong>, un creador descentralizado de agentes de IA: red libp2p entre nodos Shinkai, pagos con el protocolo x402 de Coinbase y capas de compatibilidad con Ollama, Anthropic, OpenAI, Grok y Gemini.',
-        'Desarrollando la <strong>Shinkai App Store</strong> para que los usuarios publiquen sus propias herramientas y agentes de IA.',
-        'Creé <strong>MCP Dockmaster</strong>, una herramienta que permite usar servidores MCP con Claude y Cursor.',
-        'Gestiono la infraestructura cloud en GCP + Cloudflare y los pipelines CI/CD en GitHub Actions.',
-      ],
-    },
-    projects: {
-      title: 'Proyectos',
-      subtitle: 'Productos que lidero a través de Codigo Once.',
-      items: [
+        {
+          name: 'dcSpark',
+          tag: 'IA descentralizada',
+          year: '2025',
+          copy:
+            'Construyendo Shinkai — un creador descentralizado de agentes de IA con red libp2p entre nodos, pagos con el protocolo x402 de Coinbase y capas de compatibilidad con Ollama, Anthropic, OpenAI, Grok y Gemini. También la Shinkai App Store y MCP Dockmaster. Gestionando infraestructura cloud en GCP + Cloudflare y CI/CD en GitHub Actions.',
+          url: 'https://shinkai.com',
+        },
         {
           name: 'AgentLayer',
           tag: 'IA empresarial',
@@ -263,7 +261,7 @@ export const t = {
       items: [
         {
           role: 'Ingeniero de Software Senior',
-          company: 'dcSpark',
+          company: 'dcSpark · vía Codigo Once',
           duration: 'Ene 2025 – Presente',
           bullets: [
             'Contribuidor principal del Shinkai Node que orquesta agentes de IA y gestiona modelos.',

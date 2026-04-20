@@ -7,32 +7,25 @@ interface Props {
 
 const { lang } = Astro.props;
 const n = t[lang].now;
-const p = t[lang].projects;
 ---
 
 <section id="now" class="container">
   <span class="section-label">{lang === 'en' ? '01 / Now' : '01 / Ahora'}</span>
   <h2 class="section-title">{n.title}</h2>
   <p class="section-subtitle">{n.subtitle}</p>
-  <ul class="now-list">
-    {n.items.map((item) => <li set:html={item} />)}
-  </ul>
 
-  <div id="projects" class="now-projects">
-    <span class="now-subhead">{p.subtitle}</span>
-    <div class="proj-list">
-      {p.items.map((item) => (
-        <a class="proj-item" href={item.url} target="_blank" rel="noopener">
-          <div class="proj-head">
-            <h3 class="proj-title">{item.name}</h3>
-            <div class="proj-meta">
-              <span class="proj-tag">{item.tag}</span>
-              <span>{item.year}</span>
-            </div>
+  <div class="proj-list">
+    {n.items.map((item) => (
+      <a class="proj-item" href={item.url} target="_blank" rel="noopener">
+        <div class="proj-head">
+          <h3 class="proj-title">{item.name}</h3>
+          <div class="proj-meta">
+            <span class="proj-tag">{item.tag}</span>
+            <span>{item.year}</span>
           </div>
-          <p class="proj-copy">{item.copy}</p>
-        </a>
-      ))}
-    </div>
+        </div>
+        <p class="proj-copy">{item.copy}</p>
+      </a>
+    ))}
   </div>
 </section>

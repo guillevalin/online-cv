@@ -193,7 +193,7 @@ svg {
 
 /* ---------- Section ---------- */
 section {
-  padding: 3.5rem 0;
+  padding: 5.5rem 0;
   border-top: 1px solid var(--border);
 }
 
@@ -203,7 +203,7 @@ section {
   color: var(--fg-dim);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .section-title {
@@ -211,14 +211,14 @@ section {
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: -0.02em;
-  margin: 0 0 2rem;
+  margin: 0 0 2.5rem;
   color: var(--fg);
 }
 
 .section-subtitle {
   color: var(--fg-muted);
   font-size: 1rem;
-  margin: -1.5rem 0 2rem;
+  margin: -1.75rem 0 2.5rem;
 }
 
 /* ---------- Now ---------- */
@@ -252,8 +252,8 @@ section {
 
 /* ---------- Projects (rendered inside Now) ---------- */
 .now-projects {
-  margin-top: 2.5rem;
-  padding-top: 2rem;
+  margin-top: 3.5rem;
+  padding-top: 3rem;
   border-top: 1px dashed var(--border);
 }
 
@@ -263,7 +263,7 @@ section {
   color: var(--fg-dim);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .proj-list {
@@ -566,7 +566,11 @@ section {
     padding: 2rem 0 3.5rem;
   }
   section {
-    padding: 2.5rem 0;
+    padding: 3.5rem 0;
+  }
+  .now-projects {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
   }
   .exp-head {
     flex-direction: column;

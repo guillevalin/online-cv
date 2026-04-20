@@ -250,7 +250,22 @@ section {
   font-weight: 600;
 }
 
-/* ---------- Projects ---------- */
+/* ---------- Projects (rendered inside Now) ---------- */
+.now-projects {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px dashed var(--border);
+}
+
+.now-subhead {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--fg-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
 .proj-list {
   display: grid;
   gap: 0;

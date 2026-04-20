@@ -7,6 +7,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const n = t[lang].now;
+const p = t[lang].projects;
 ---
 
 <section id="now" class="container">
@@ -16,4 +17,22 @@ const n = t[lang].now;
   <ul class="now-list">
     {n.items.map((item) => <li set:html={item} />)}
   </ul>
+
+  <div id="projects" class="now-projects">
+    <span class="now-subhead">{p.subtitle}</span>
+    <div class="proj-list">
+      {p.items.map((item) => (
+        <a class="proj-item" href={item.url} target="_blank" rel="noopener">
+          <div class="proj-head">
+            <h3 class="proj-title">{item.name}</h3>
+            <div class="proj-meta">
+              <span class="proj-tag">{item.tag}</span>
+              <span>{item.year}</span>
+            </div>
+          </div>
+          <p class="proj-copy">{item.copy}</p>
+        </a>
+      ))}
+    </div>
+  </div>
 </section>

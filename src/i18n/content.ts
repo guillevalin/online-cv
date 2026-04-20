@@ -183,7 +183,10 @@ export const t = {
             'Postgraduate studies focused on software development best practices, agile methodologies, and leading large-scale IT projects (2015–2016).',
         },
       ],
-      languages: { label: 'Languages', items: ['Spanish (Native)', 'English (Fluent)'] },
+      languages: {
+        label: 'Languages',
+        items: ['Spanish (Native)', 'English (Fluent)', 'Portuguese (Intermediate)'],
+      },
     },
     footer: {
       tagline: 'Based in Chile. Available for select engagements through',
@@ -372,7 +375,10 @@ export const t = {
             'Estudios de posgrado centrados en mejores prácticas de desarrollo de software, metodologías ágiles y liderazgo de proyectos TI a gran escala (2015–2016).',
         },
       ],
-      languages: { label: 'Idiomas', items: ['Español (Nativo)', 'Inglés (Fluido)'] },
+      languages: {
+        label: 'Idiomas',
+        items: ['Español (Nativo)', 'Inglés (Fluido)', 'Portugués (Intermedio)'],
+      },
     },
     footer: {
       tagline: 'Con base en Chile. Disponible para proyectos seleccionados a través de',
